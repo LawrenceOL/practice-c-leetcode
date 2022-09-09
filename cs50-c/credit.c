@@ -83,6 +83,7 @@ int main(void)
     {
         int digit1 = ((card_number / 100000000000000) % 10);
         int digit2 = ((card_number / 10000000000000) % 10);
+        int digit2_v2 = digit2;
         int digit3 = ((card_number / 1000000000000) % 10);
         int digit4 = ((card_number / 100000000000) % 10);
         int digit5 = ((card_number / 10000000000) % 10);
@@ -107,7 +108,7 @@ int main(void)
 
         int summation = sum_digits(digit14) + sum_digits(digit12) + sum_digits(digit10) + sum_digits(digit8) + sum_digits(digit6) + sum_digits(digit4) + sum_digits(digit2) + digit15 + digit13 + digit11 + digit9 + digit7 + digit5 + digit3 + digit1;
 
-        if (summation % 10 == 0)
+        if (summation % 10 == 0 && (digit2_v2 == 4 || digit2_v2 == 7))
         {
             printf("AMEX\n");
         }
@@ -145,13 +146,14 @@ int main(void)
         digit3 *= 2;
         digit1 *= 2;
 
-        int summation = sum_digits(digit15) + sum_digits(digit13) + sum_digits(digit11) + sum_digits(digit9) + sum_digits(digit7) + sum_digits(digit5) + sum_digits(digit3) + sum_digits(digit1) + digit16 + digit14 + digit12 + digit10 + digit8 + digit6 + digit4 + digit2;
+        int summation = sum_digits(digit15) + sum_digits(digit13) + sum_digits(digit11) + sum_digits(digit9) + sum_digits(digit7) + sum_digits(digit5) + sum_digits(digit3) + sum_digits(digit1) + digit16 + digit14 + digit12 +
+                        digit10 + digit8 + digit6 + digit4 + digit2;
 
         if (summation % 10 == 0 && ((card_number / 1000000000000000) % 10) == 4)
         {
             printf("VISA\n");
         }
-        else if (summation % 10 == 0)
+        else if (summation % 10 == 0 && (digit2 == 1 || digit2 == 2 || digit2 == 3 || digit2 == 4 || digit2 == 5))
         {
             printf("MASTERCARD\n");
         }
