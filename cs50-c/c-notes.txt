@@ -1,0 +1,4 @@
+to compile with gcc
+
+Example: 
+gcc hi.c cs50.c -o hi
