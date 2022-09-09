@@ -1,7 +1,11 @@
 #include <stdio.h>
 
+
 /* practicing c for the first time in awhile */
 
 int main(void) {
-    printf("Hello, World! \n");    
+
+    char *str = "Hello, world!!";
+
+    printf("%s\n", str); //string literal   
 }
